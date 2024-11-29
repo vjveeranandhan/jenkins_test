@@ -1,18 +1,16 @@
-pipeline{
+pipeline {
     agent any
-    stages('Checkout'){
-        stage{
-            steps{
+    stages {
+        stage('Checkout') {
+            steps {
                 git 'https://github.com/vjveeranandhan/jenkins_test.git'
             }
         }
-    }
-    stages('Testing file'){
-        stage{
-            steps{
+        stage('Testing file') {
+            steps {
                 sh '''
                     chmod +x testfile.sh
-                    testfile.sh
+                    ./testfile.sh
                 '''
             }
         }
