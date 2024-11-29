@@ -7,12 +7,14 @@ pipeline{
             }
         }
     }
-    stage('Testing file'){
-        steps{
-            sh '''
-                chmod +x testfile.sh
-                testfile.sh
-            '''
+    stages('Testing file'){
+        stage{
+            steps{
+                sh '''
+                    chmod +x testfile.sh
+                    testfile.sh
+                '''
+            }
         }
     }
 }
